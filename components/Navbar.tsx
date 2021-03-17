@@ -40,12 +40,9 @@ const Navbar = () => {
 
       {/* Navigation on desktop devices */}
       <div className="hidden md:flex">
-        <Link href="/friends">
-          <a className="text-blue-700 p-2 mr-2 rounded hover:bg-blue-50">Friends</a>
-        </Link>
         <a
           className="flex items-center text-blue-700 p-2 mr-2 rounded hover:bg-blue-50"
-          href="https://spencerwoo.com"
+          href="https://ivyxjc.com"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -76,10 +73,7 @@ const Navbar = () => {
       <CSSTransition in={showMenu} timeout={300} classNames="menu" unmountOnExit nodeRef={menuRef}>
         <div className="absolute top-0 right-0" ref={menuRef}>
           <div className="flex flex-col space-y-4 m-3 p-4 rounded bg-white shadow-xl">
-            <Link href="/friends">
-              <a>Friends</a>
-            </Link>
-            <a className="flex items-center" href="https://spencerwoo.com" target="_blank" rel="noopener noreferrer">
+            <a className="flex items-center" href="https://ivyxjc.com" target="_blank" rel="noopener noreferrer">
               Portfolio
               <ExternalLinkOutline className="ml-2" size={20} />
             </a>

@@ -13,7 +13,7 @@ const PostCard = ({ post }: { post: Post }) => {
           </div>
         </div>
 
-        <div className="font-bold text-xl mb-1">{post.name}</div>
+        <div className="font-bold text-xl mb-1">{post.title}</div>
         <div className="text-sm text-gray-400 mb-2">{post.preview}</div>
 
         <div className="text-sm text-gray-400 flex flex-nowrap items-center space-x-2 overflow-hidden">

@@ -4,7 +4,7 @@ import { NotionAPI } from 'notion-client'
 import { ExtendedRecordMap } from 'notion-types'
 import { FC } from 'react'
 import { Code, Equation, NotionRenderer } from 'react-notion-x'
-import { getAllPosts, getPostViews, Post, PostView } from '../..'
+import { getAllPosts, Post } from '../..'
 import Footer from '../../../components/Footer'
 import Navbar from '../../../components/Navbar'
 import Pagination, { PaginationType } from '../../../components/Pagination'
@@ -15,15 +15,15 @@ const notion = new NotionAPI()
 
 export const getStaticProps = async ({ params: { slug } }: { params: { slug: string } }) => {
   // Get all posts again
-  const postViews = new Map<string, number>()
-  const postViewList = await getPostViews()
-  postViewList.forEach((v: PostView) => {
-    postViews.set(v.key, v.value)
-  })
+  // const postViews = new Map<string, number>()
+  // const postViewList = await getPostViews()
+  // postViewList.forEach((v: PostView) => {
+  //   postViews.set(v.key, v.value)
+  // })
 
   const posts = (await getAllPosts()).filter(p => p.published)
   posts.forEach(p => {
-    p.views = postViews.get(formatSlug(p.date, p.slug))!
+    p.views = 0
   })
 
   // Find the current blogpost by slug
@@ -61,7 +61,7 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
   return (
     <>
       <Head>
-        <title>{post.name} - Spencer&apos;s Blog</title>
+        <title>{post.title} - Ivyxjc&apos;s Blog</title>
       </Head>
       <div className="min-h-screen flex flex-col bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 justify-center flex-grow max-w-3xl">
@@ -76,7 +76,7 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
             <Pagination pagination={pagination} />
 
             <div className="mt-8">
-              <DiscussionEmbed shortname="spencerwoo" config={{ identifier: formatSlug(post.date, post.slug) }} />
+              <DiscussionEmbed shortname="ivyxjc" config={{ identifier: formatSlug(post.date, post.slug) }} />
             </div>
           </div>
         </div>

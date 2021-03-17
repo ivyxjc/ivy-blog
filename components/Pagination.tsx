@@ -15,14 +15,14 @@ const Pagination = ({ pagination }: { pagination: PaginationType }) => {
         <Link href="/[year]/[month]/[slug]" as={formatSlug(pagination.prev.date, pagination.prev.slug)}>
           <a className="p-4 border-2 border-gray-100 bg-white hover:border-gray-300 flex items-center justify-between space-x-2">
             <ChevronLeftOutline size={20} />
-            <span>{pagination.prev?.name}</span>
+            <span>{pagination.prev?.title}</span>
           </a>
         </Link>
       )}
       {pagination.next && (
         <Link href="/[year]/[month]/[slug]" as={formatSlug(pagination.next.date, pagination.next.slug)}>
           <a className="p-4 border-2 border-gray-100 bg-white hover:border-gray-300 flex items-center justify-between space-x-2">
-            <span>{pagination.next?.name}</span>
+            <span>{pagination.next?.title}</span>
             <ChevronRightOutline size={20} />
           </a>
         </Link>

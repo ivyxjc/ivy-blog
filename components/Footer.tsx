@@ -22,7 +22,7 @@ const Footer = () => {
             TypeScript.
           </a>
         </div>
-        <div>Spencer Woo © 2017-{currentYear}</div>
+        <div>Ivyxjc © 2016-{currentYear}</div>
       </div>
     </footer>
   )
