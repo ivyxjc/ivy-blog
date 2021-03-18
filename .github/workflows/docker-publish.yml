@@ -8,11 +8,19 @@ jobs:
   multi:
     runs-on: ubuntu-latest
     steps:
+      - name: Show CPU Model and Free Space
+        run: |
+          echo -e "Total CPU cores\t: $(nproc)"
+          cat /proc/cpuinfo | grep 'model name'
+          free -h
       - name: Checkout
         uses: actions/checkout@v2
       - name: Push to Docker Hub
         uses: docker/build-push-action@v1
         with:
+          push: true
+          tags: ivyxjc/ivy-blog:latest
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
-          repository: ivyxjc/ivy-blog
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}

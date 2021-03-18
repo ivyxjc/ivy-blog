@@ -67,7 +67,7 @@ const BlogPost: FC<{ recordMap: ExtendedRecordMap; post: Post; pagination: Pagin
         <div className="container mx-auto px-4 sm:px-6 justify-center flex-grow max-w-3xl">
           <Navbar />
 
-          <div className="my-20">
+          <div className="my-16">
             <div className="overflow-hidden py-2 sm:p-8 sm:border-2 sm:bg-white sm:border-gray-100 rounded">
               <PostTitle post={post} />
               <NotionRenderer recordMap={recordMap} components={{ code: Code, equation: Equation }} />

@@ -104,7 +104,7 @@ const HomePage = ({ posts }: { posts: Post[] }) => {
         <div className="container mx-auto px-4 sm:px-6 justify-center flex-grow max-w-3xl">
           <Navbar />
 
-          <div className="my-20">
+          <div className="my-16">
             <div className="inline-block shadow-lg rounded-full w-18 h-18">
               <Image className="rounded-full" src="/images/avatar.png" alt="avatar" width="100%" height="100%" />
             </div>
