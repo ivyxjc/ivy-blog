@@ -1,4 +1,4 @@
-import { AcademicCapOutline, ExternalLinkOutline, RssOutline, MenuOutline } from 'heroicons-react'
+import { AcademicCapOutline, RssOutline, MenuOutline } from 'heroicons-react'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
@@ -41,15 +41,6 @@ const Navbar = () => {
       {/* Navigation on desktop devices */}
       <div className="hidden md:flex">
         <a
-          className="flex items-center text-blue-700 p-2 mr-2 rounded hover:bg-blue-50"
-          href="https://ivyxjc.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Portfolio
-          <ExternalLinkOutline className="ml-2" size={20} />
-        </a>
-        <a
           className="flex items-center text-pink-700 p-2 mr-2 rounded bg-pink-50 hover:bg-pink-100"
           href="/feed"
           target="_blank"
@@ -73,10 +64,6 @@ const Navbar = () => {
       <CSSTransition in={showMenu} timeout={300} classNames="menu" unmountOnExit nodeRef={menuRef}>
         <div className="absolute top-0 right-0" ref={menuRef}>
           <div className="flex flex-col space-y-4 m-3 p-4 rounded bg-white shadow-xl">
-            <a className="flex items-center" href="https://ivyxjc.com" target="_blank" rel="noopener noreferrer">
-              Portfolio
-              <ExternalLinkOutline className="ml-2" size={20} />
-            </a>
             <a className="flex items-center text-pink-700" href="/feed" target="_blank" rel="noopener noreferrer">
               RSS
               <RssOutline className="ml-2" size={20} />
