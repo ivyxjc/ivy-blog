@@ -1,4 +1,4 @@
-import { ChevronLeftOutline, ChevronRightOutline } from 'heroicons-react'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import { Post } from '../pages'
 import { formatSlug } from '../utils/slugFormat'
@@ -10,20 +10,20 @@ export interface PaginationType {
 
 const Pagination = ({ pagination }: { pagination: PaginationType }) => {
   return (
-    <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+    <div className="md:mt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
       {pagination.prev && (
         <Link href="/[year]/[month]/[slug]" as={formatSlug(pagination.prev.date, pagination.prev.slug)}>
-          <a className="p-4 border-2 border-gray-100 bg-white hover:border-gray-300 flex items-center justify-between space-x-2">
-            <ChevronLeftOutline size={20} />
+          <a className="btn">
+            <ChevronLeftIcon className="w-5 h-5" />
             <span>{pagination.prev?.title}</span>
           </a>
         </Link>
       )}
       {pagination.next && (
         <Link href="/[year]/[month]/[slug]" as={formatSlug(pagination.next.date, pagination.next.slug)}>
-          <a className="p-4 border-2 border-gray-100 bg-white hover:border-gray-300 flex items-center justify-between space-x-2">
+          <a className="btn">
             <span>{pagination.next?.title}</span>
-            <ChevronRightOutline size={20} />
+            <ChevronRightIcon className="w-5 h-5" />
           </a>
         </Link>
       )}
