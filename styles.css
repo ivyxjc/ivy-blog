@@ -19,8 +19,9 @@
   @apply border-2;
   @apply border-gray-100;
 }
+
 .notion-bookmark:hover {
-  @apply border-blue-400;
+    @apply border-green-400;
 }
 .notion-viewport {
   z-index: -10;

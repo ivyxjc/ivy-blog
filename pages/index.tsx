@@ -32,13 +32,8 @@ export const getAllPosts = async (): Promise<Post[]> => {
   return await axios.get(`https://notion-api.splitbee.io/v1/table/${NOTION_BLOG_ID}`).then(res => res.data)
 }
 
-export const getPostView = async (slug: string): Promise<number> => {
-  return await axios
-    .get('https://api.splitbee.io/v1/blog.ivyxjc.com/pageviews', {
-      params: { page: slug },
-      headers: { 'x-api-key': process.env.SPLITBEE_API_TOKEN }
-    })
-    .then(res => res.data.count)
+export const getPostView = async (_: string): Promise<number> => {
+  return Promise.resolve(41)
 }
 
 export const getStaticProps = async () => {
